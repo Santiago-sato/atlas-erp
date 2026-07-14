@@ -1,29 +1,41 @@
-# Atlas ERP
+# AtlasERP
 
-Sistema ERP completo para la gestión empresarial.
+Sistema ERP empresarial desarrollado con arquitectura moderna utilizando Spring Boot, React, PostgreSQL y Docker.
 
-## Estructura del Proyecto
+## Objetivo
 
-```
-atlas-erp/
-├── backend/        # API y lógica del servidor
-├── frontend/       # Aplicación de usuario
-├── infra/          # Infraestructura y configuración
-├── database/       # Esquemas, migraciones y seeds
-├── docker/         # Configuración de Docker
-├── docs/           # Documentación
-│   ├── arquitectura/
-│   ├── diagramas/
-│   ├── capturas/
-│   ├── api/
-│   └── decisiones/
-└── scripts/        # Scripts de utilidad
-```
+Construir un ERP empresarial completamente funcional desplegado sobre un Homelab utilizando Proxmox, Docker y Ubuntu Server.
 
-## Inicio Rápido
+## Tecnologías
 
-_Instrucciones de instalación y ejecución._
+### Backend
+- Java 21
+- Spring Boot
+- Spring Security
+- JWT
+- JPA
+- Hibernate
 
-## Licencia
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-MIT
+### Base de datos
+- PostgreSQL
+
+### Infraestructura
+- Proxmox
+- Ubuntu Server
+- Docker
+- Docker Compose
+- Nginx
+
+### Monitoreo
+- Prometheus
+- Grafana
+
+## Estado del proyecto
+
+🚧 En desarrollo
