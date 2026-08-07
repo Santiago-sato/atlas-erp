@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: atlaserp-backend
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/${DB_NAME:atlaserp}
+    username: ${DB_USER:atlaserp}
+    password: ${DB_PASSWORD:changeme}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: ${JWT_SECRET:changeme-in-production}
+  expiration: 3600000
