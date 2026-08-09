@@ -1,21 +1,9 @@
-cat > application-dev.yml << 'EOF'
 spring:
-  datasource:
-    url: jdbc:postgresql://192.168.0.103:5432/atlaserp
-    username: atlaserp
-    password: ${DB_PASSWORD:AtlasERP2026!}
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    properties:
-      hibernate:
-        format_sql: true
-    show-sql: true
+  application:
+    name: atlaserp-backend
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
 
-server:
-  port: 8080
-
-logging:
-  level:
-    com.atlaserp: DEBUG
-EOF
+jwt:
+  secret: ${JWT_SECRET:changeme-in-production}
+  expiration: 3600000

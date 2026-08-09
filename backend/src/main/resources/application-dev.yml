@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://192.168.0.103:5432/atlaserp
+    username: atlaserp
+    password: ${DB_PASSWORD:AtlasERP2026!}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.atlaserp: DEBUG
