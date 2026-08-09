@@ -7,6 +7,9 @@ import com.atlaserp.dto.response.UsuarioResponse;
 import com.atlaserp.entity.Usuario;
 import com.atlaserp.repository.UsuarioRepository;
 import com.atlaserp.security.JwtService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "Autenticacion", description = "Login y gestion de sesion")
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthController {
@@ -33,6 +37,12 @@ public class AuthController {
         this.jwtService = jwtService;
     }
 
+    @Operation(summary = "Iniciar sesion", description = "Autentica un usuario y devuelve un JWT con su rol y permisos")
+    @ApiResponses({
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "Login exitoso"),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "401", description = "Credenciales invalidas"),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Datos de entrada invalidos")
+    })
     @PostMapping("/login")
     public ResponseEntity<ApiResponse<LoginResponse>> login(@Valid @RequestBody LoginRequest request) {
         authenticationManager.authenticate(
